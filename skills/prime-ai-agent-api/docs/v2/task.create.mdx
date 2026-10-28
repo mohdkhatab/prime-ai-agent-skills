@@ -1,0 +1,18 @@
+---
+title: 'task.create'
+openapi: 'POST /v2/task.create'
+---
+
+import Support from "/snippets/support.mdx"
+
+<Support />
+
+<Tip>
+**Auth:**
+
+- **API Key:** Full access.
+- **Standard OAuth client:** Requires `create_task` or `manage_all_tasks`. With `create_task`, created tasks are accessible only to the same client; see [Task visibility](<YOUR_LINK>).
+- **Trusted client:** Full access.
+
+**Agents:** To message an existing agent instead of creating a new task, use [task.sendMessage](<YOUR_LINK>) with `agent-default-main_task` as `task_id`. See the [Agents](<YOUR_LINK>) guide.
+</Tip>

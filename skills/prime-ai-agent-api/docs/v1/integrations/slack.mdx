@@ -1,0 +1,53 @@
+---
+title: 'Slack'
+---
+
+import V1Deprecated from "/snippets/v1-deprecated.mdx"
+
+<V1Deprecated />
+
+
+## Overview
+
+The Prime AI Agent Slack integration lets you create sessions directly from Slack channels or with the Prime AI Agent bot.
+
+---
+
+## Requirements
+
+- A Slack workspace where you have permission to install apps
+- A Prime AI Agent Account
+
+---
+
+## Installation
+
+1. Go to **Prime AI Agent Settings → Integrations → Slack**
+2. Click **Connect**
+3. Install the app and complete setup
+
+
+![Slack Integration](/images/screenshot/integration_slack.png)
+
+---
+
+## Usage
+- Tag @prime-ai-agent in threads in channel or send a direct message to the Prime AI Agent bot
+- Use `mute` or `unmute` to control thread activity  
+
+---
+
+
+## Changelog
+
+### November 27, 2025
+
+We’ve updated Prime AI Agent Slack App behavior based on user feedback.
+
+| Scenario                                           | Previous Behavior                                                                 | Updated Behavior                                                            |
+| -------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| **Direct @Prime AI Agent in a channel**                  | Prime AI Agent replies directly under the message and automatically starts a Prime AI Agent thread. | *No change, behavior remains the same.*                                    |
+| **@Prime AI Agent in a reply within a non-Prime AI Agent thread** | A new Prime AI Agent thread would be created.                                              | Prime AI Agent now replies directly under the message without creating a new thread. |
+| **User reply behavior inside Prime AI Agent threads**    | Prime AI Agent proactively listens and replies within the thread.                          | Prime AI Agent will only reply when explicitly mentioned.                            |
+
+

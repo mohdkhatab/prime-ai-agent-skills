@@ -1,0 +1,83 @@
+---
+title: 'Quickstart'
+description: 'Generate an API key and make your first call.'
+---
+
+import V1Deprecated from "/snippets/v1-deprecated.mdx"
+
+<V1Deprecated />
+
+
+import Features from '/snippets/features.mdx'
+
+## Create Your API Key
+<Card title="Get your API Key" horizontal arrow icon="key" href="<YOUR_LINK>">
+  Open Developers settings to generate a new key.
+</Card>
+
+<Warning>
+  Keep your API keys secure and never share them publicly. Each key provides full access to your Prime AI Agent account.
+</Warning>
+
+
+## Make Your First API Call
+<Tabs>
+  <Tab title="cURL">
+    ```shell lines
+    curl --request POST \
+      --url 'https://<YOUR_API_URL>/v1/tasks' \
+      --header 'accept: application/json' \
+      --header 'content-type: application/json' \
+      --header "API_KEY: $PRIME_AI_AGENT_API_KEY" \
+      --data '{
+        "prompt": "hello"
+      }'
+    ```
+  </Tab>
+  <Tab title="Python">
+    ```python lines
+    import requests
+
+    url = "https://<YOUR_API_URL>/v1/tasks"
+    headers = {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "API_KEY": f"{PRIME_AI_AGENT_API_KEY}"
+    }
+    data = {
+        "prompt": "hello"
+    }
+
+    response = requests.post(url, json=data, headers=headers)
+    print(response.json())
+    ```
+  </Tab>
+  <Tab title="TypeScript">
+    ```typescript lines
+    const response = await fetch('https://<YOUR_API_URL>/v1/tasks', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'API_KEY': `${process.env.PRIME_AI_AGENT_API_KEY}`
+      },
+      body: JSON.stringify({
+        prompt: 'hello'
+      })
+    });
+
+    const data = await response.json();
+    console.log(data);
+    ```
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+Now that you've made your first API call, here are a few things you can do to learn more about the Prime AI Agent API:
+
+<Card title="Switch from OpenAI in 3 lines of code" horizontal icon="rocket" href="/v1/openai-compatibility/overview">
+  Learn more about our Responses API, allowing you to switch from OpenAI to the Prime AI Agent API with just 3 lines of code.
+</Card>
+
+<Features/>

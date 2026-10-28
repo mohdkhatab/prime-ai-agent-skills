@@ -1,0 +1,51 @@
+---
+title: 'Notion'
+description: 'Connect Prime AI Agent to your Notion workspace for AI-powered knowledge management'
+---
+
+import V1Deprecated from "/snippets/v1-deprecated.mdx"
+
+<V1Deprecated />
+
+
+# Notion
+
+The Notion connector links Prime AI Agent to your Notion workspace, turning it into a knowledge assistant. Instead of manually searching through pages and databases, you can ask Prime AI Agent directly for project updates, document summaries, or specific information.
+
+## Use Cases
+
+- **Project Management**: Get real-time updates on project status and progress
+- **Knowledge Retrieval**: Find specific information across all your Notion pages
+- **Document Summarization**: Get quick summaries of long documents or meeting notes
+- **Database Queries**: Ask natural language questions about your Notion databases
+
+## Example Usage
+
+With the Notion connector, Prime AI Agent becomes your project assistant. This example shows how to request the latest project updates, helping you stay informed without switching context.
+
+```bash
+curl --request POST \
+  --url https://<YOUR_API_URL>/v1/tasks \
+  --header 'API_KEY: <YOUR API KEY HERE>' \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "prompt": "Any new updates on the project status with Prime AI Agent?",
+  "mode": "fast",
+  "connectors": [
+    "9c27c684-2f4f-4d33-8fcf-51664ea15c00"
+  ]
+}'
+```
+
+## Setup
+
+To set up the Notion connector, follow these steps:
+
+1. Go to your integrations page on [<YOUR_DOMAIN>](<YOUR_LINK>).
+2. Click **Add Notion Connector**.
+3. Complete the secure OAuth authentication.
+4. Your Notion connector will be available with UUID: `9c27c684-2f4f-4d33-8fcf-51664ea15c00`.
+
+## Privacy & Security
+
+Prime AI Agent connects to your Notion workspace using secure OAuth authentication. Your data remains private, and access is limited to the permissions you grant during setup.
